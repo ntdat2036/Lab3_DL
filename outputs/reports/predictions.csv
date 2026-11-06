@@ -1,0 +1,201 @@
+index,true_label,predicted_label,prob_negative,prob_positive,confidence,correct,token_length,is_truncated,text_preview
+0,POSITIVE,POSITIVE,0.386489,0.613511,0.613511,True,437,True,"<br /><br />When I unsuspectedly rented A Thousand Acres, I thought I was in for an entertaining King Lear story and of "
+1,POSITIVE,POSITIVE,0.250977,0.749023,0.749023,True,240,True,"This is the latest entry in the long series of films with the French agent, O.S.S. 117 (the French answer to James Bond)"
+2,NEGATIVE,NEGATIVE,0.785741,0.214259,0.785741,True,163,True,This movie was so frustrating. Everything seemed energetic and I was totally prepared to have a good time. I at least th
+3,POSITIVE,NEGATIVE,0.666041,0.333959,0.666041,False,145,True,"I was truly and wonderfully surprised at ""O' Brother, Where Art Thou?"" The video store was out of all the movies I was p"
+4,NEGATIVE,NEGATIVE,0.58234,0.41766,0.58234,True,111,False,"This movie spends most of its time preaching that it is the script that makes the movie, but apparently there was no scr"
+5,POSITIVE,POSITIVE,0.240206,0.759794,0.759794,True,175,True,After a very long time Marathi cinema has come with some good movie.This movie is one of the best Marathi movies ever ma
+6,POSITIVE,POSITIVE,0.245089,0.754911,0.754911,True,149,True,"This is a really sad, and touching movie! It deals with the subject of child abuse. It's really sad, but mostly a true s"
+7,NEGATIVE,NEGATIVE,0.765009,0.234991,0.765009,True,177,True,Don't pay any attention to the rave reviews of this film here. It is the worst Van Damme film and one of the worst of an
+8,NEGATIVE,POSITIVE,0.444548,0.555452,0.555452,False,192,True,Porn legend Gregory Dark directs this cheesy horror flick that has Glen Jacobs (Kane from WWF/WWE/ whatever it calls its
+9,POSITIVE,POSITIVE,0.23857,0.76143,0.76143,True,160,True,This was a great movie. Something not only for Black History month but as a reminder of the goodness of people and the s
+10,POSITIVE,POSITIVE,0.255854,0.744146,0.744146,True,180,True,"If you're a fan of Turkish and Middle Eastern music, you're in great luck. This film is a documentary of current music i"
+11,NEGATIVE,NEGATIVE,0.84795,0.15205,0.84795,True,163,True,"OK, it was a ""risky"" move to rent this flick, but I thought I had nothing to lose.Well, I was wrong. This is, next to ""B"
+12,NEGATIVE,NEGATIVE,0.702739,0.297261,0.702739,True,280,True,"These days, writers, directors and producers are relying more and more on the ""surprise"" ending. The old art of bringing"
+13,NEGATIVE,POSITIVE,0.441821,0.558179,0.558179,False,346,True,"Teenager Tamara (Jenna Dewan) has it rough. She's ridiculed by all the popular ""kids"" for being shy, bookish, frumpy and"
+14,POSITIVE,POSITIVE,0.192183,0.807817,0.807817,True,632,True,"Dirty Harry goes to Atlanta is what Burt called this fantastic, first-rate detective thriller that borrows some of its p"
+15,POSITIVE,POSITIVE,0.408413,0.591587,0.591587,True,235,True,"I'm 15, usually not kids my age usually watch these old classic movies. But this is one of my favorites. I was totally a"
+16,NEGATIVE,POSITIVE,0.362766,0.637234,0.637234,False,223,True,"The story is: a turn-of-the-century troupe of actors, along with producers and theatre-owners, have very complicated rel"
+17,NEGATIVE,NEGATIVE,0.677075,0.322925,0.677075,True,365,True,"A holiday on a boat, a married couple, an angry waiter and a shipwreck is the reason to this films beginning.<br /><br /"
+18,POSITIVE,POSITIVE,0.488826,0.511174,0.511174,True,207,True,Definitely a movie for people who ask only to be entertained and who do not over-think their movies. <br /><br />Lots of
+19,POSITIVE,POSITIVE,0.433307,0.566693,0.566693,True,230,True,If Hollywood had the wellbeing of the audience at heart we would see 20 films a year with the kind of wholesome fortitud
+20,NEGATIVE,NEGATIVE,0.746992,0.253008,0.746992,True,182,True,I was expecting a lot more of this film than what I actually got. The acting was just awful from everyone and the story 
+21,NEGATIVE,POSITIVE,0.347387,0.652613,0.652613,False,609,True,"Coming from Kiarostami, this art-house visual and sound exposition is a surprise. For a director known for his narrative"
+22,NEGATIVE,POSITIVE,0.405342,0.594658,0.594658,False,658,True,"In the early 00's, production companies had a short-lived craze for supernatural genre movies in France after ""The Crims"
+23,POSITIVE,POSITIVE,0.200799,0.799201,0.799201,True,211,True,I was so happy to learn that Hari Om will finally be theatrically released in 2007. I saw this film three years ago at t
+24,NEGATIVE,NEGATIVE,0.819635,0.180365,0.819635,True,176,True,"The gates of Hell opened up and spit out this film, then closed again.<br /><br />Watching this movie makes me appreciat"
+25,POSITIVE,POSITIVE,0.213133,0.786867,0.786867,True,314,True,"""In Love and War"" is a simple feel-good TV-film, and should be viewed as such.<br /><br />(Possible spoiler)<br /><br />"
+26,NEGATIVE,NEGATIVE,0.722868,0.277132,0.722868,True,238,True,Not much to say other than plenty of Wire-fu and supposed Sholin monks ego-tripping about Kung-fu and caricature Japanes
+27,POSITIVE,NEGATIVE,0.703911,0.296089,0.703911,False,176,True,It could be easy to complain about the quality of this movie (you don't have to throw cartloads of money at a movie to m
+28,POSITIVE,POSITIVE,0.217596,0.782404,0.782404,True,259,True,"I have always loved old movies but this is one of my top ten favorites...it has all the charm, 1940's quaintness, and go"
+29,POSITIVE,POSITIVE,0.19609,0.80391,0.80391,True,173,True,"I absolutely loved this movie. Great, realistic looking combat footage for one thing and a touching, genuine story also."
+30,NEGATIVE,POSITIVE,0.313572,0.686428,0.686428,False,433,True,"Intended as light entertainment, this film is indeed successful as such during its first half, but then succumbs to a ra"
+31,NEGATIVE,NEGATIVE,0.786653,0.213347,0.786653,True,155,True,This is just one of those films which cannot justify much of anything that happens. These people are going on a trek: th
+32,POSITIVE,NEGATIVE,0.624893,0.375107,0.624893,False,119,False,It's really too bad that nobody knows about this movie. I think if it were just spruced up a little and if it weren't so
+33,NEGATIVE,NEGATIVE,0.71784,0.28216,0.71784,True,97,False,"Unlike Terms of Endearment and Steel Magnolia's, I left the movie theater feeling VERY disappointed. I started to get in"
+34,NEGATIVE,POSITIVE,0.351468,0.648532,0.648532,False,223,True,"""An astronaut (Michael Emmet) dies while returning from a mission and his body is recovered by the military. The base wh"
+35,POSITIVE,NEGATIVE,0.65817,0.34183,0.65817,False,78,False,"I recently rented this video after seeing ""Final Ascent"" by the same writer. I wasn't prepared for how intense this film"
+36,NEGATIVE,NEGATIVE,0.575863,0.424137,0.575863,True,164,True,"Lovely music. Beautiful photography, some of scenes are breathtaking and affecting. But the dramatic tension is lost in "
+37,NEGATIVE,POSITIVE,0.476823,0.523177,0.523177,False,401,True,"As everyone knows, nobody can play Scarlett O'Hara like Vivien Leigh, and nobody can play Rhett Butler like Clark Gable."
+38,NEGATIVE,NEGATIVE,0.711564,0.288436,0.711564,True,228,True,"A very sensitive topic--15 y/o girl abandoned by mother as a baby and who goes to visit her, continues to be ignored, is"
+39,NEGATIVE,NEGATIVE,0.548881,0.451119,0.548881,True,701,True,"This is about some vampires (who can run around out in the sunlight), that are causing some problems down in South Ameri"
+40,NEGATIVE,NEGATIVE,0.700205,0.299795,0.700205,True,70,False,"This film is bad. It's filled with glaring plot holes, characters who are ruled by stupidity, bad acting and above all, "
+41,NEGATIVE,NEGATIVE,0.769547,0.230453,0.769547,True,146,True,This movie is so bad that it actually gets funny. One of the worst movies I've ever seen in my entire life. The funny th
+42,NEGATIVE,NEGATIVE,0.833022,0.166978,0.833022,True,468,True,"Well, where to start describing this celluloid debacle? You already know the big fat NADA passing as a plot, so let's ju"
+43,NEGATIVE,NEGATIVE,0.809736,0.190264,0.809736,True,157,True,"I really liked the movie 'The Emporer's New Groove', but watching this was like coming home and seeing your wife having "
+44,NEGATIVE,NEGATIVE,0.670069,0.329931,0.670069,True,151,True,"This thing, directed by french sensation Patrick Sebastien,is worst than all the turkeys that you may have seen. Forget "
+45,POSITIVE,POSITIVE,0.341056,0.658944,0.658944,True,218,True,"I have done a lot of international travel, both on business and as a tourist. For both types I assure you the best advic"
+46,POSITIVE,POSITIVE,0.421509,0.578491,0.578491,True,286,True,"Late night on BBC1, was on my way to bed but curiosity piqued at a contemporary-set Irish film so I stayed to watch for "
+47,POSITIVE,POSITIVE,0.465889,0.534111,0.534111,True,264,True,"Absolute grabber of a movie, and given its age, years ahead of its time. I first saw this the week my dad came home with"
+48,POSITIVE,POSITIVE,0.194356,0.805644,0.805644,True,368,True,"I saw Le Conseguenze Dell'Amore on the 2005 Rotterdam Filmfestival, It was the first of ten films I saw there.<br /><br "
+49,NEGATIVE,POSITIVE,0.31533,0.68467,0.68467,False,165,True,A not so good action thriller because it unsuccessfully trends the same water as early Steven Seagal films because there
+50,POSITIVE,POSITIVE,0.329227,0.670773,0.670773,True,525,True,Fantastic Chaplin movie with many memorable moments as Charlie joins the army to fight in WW 1.<br /><br />At first he g
+51,POSITIVE,NEGATIVE,0.740219,0.259781,0.740219,False,225,True,It is to typical of people complaining about something when they no nothing about it...So this is about a gay man fallin
+52,NEGATIVE,NEGATIVE,0.526516,0.473484,0.526516,True,147,True,This series takes a classic story and makes rubbish of it. Robin is somehow mystified by an elk-man in the forest and is
+53,POSITIVE,POSITIVE,0.472737,0.527263,0.527263,True,265,True,There's a good running bit about the price tag of a silk negligee. The bimbo in the office shows off the bargain she got
+54,POSITIVE,POSITIVE,0.350993,0.649007,0.649007,True,157,True,"I especially liked the ending of this movie--I really felt what the characters must have felt, which I think is a mark o"
+55,POSITIVE,POSITIVE,0.469716,0.530284,0.530284,True,172,True,I remember seeing this film in the mid 80's thought it a well paced and well acted piece. I now work quite often in Berk
+56,NEGATIVE,NEGATIVE,0.716672,0.283327,0.716672,True,182,True,"I wasn't able to last ten minutes on the this terrible film. In and age of DV cameras, it looks to have been shot on VHS"
+57,POSITIVE,POSITIVE,0.387451,0.612549,0.612549,True,197,True,"At first I didn't think that the performance by Lauren Ambrose was anything but flaky, but as her character developed th"
+58,POSITIVE,NEGATIVE,0.591758,0.408242,0.591758,False,238,True,I'd like to point out these excellent points in favor of this movie:<br /><br />#1 Angelina Jolie sex scene <br /><br />
+59,POSITIVE,NEGATIVE,0.703662,0.296338,0.703662,False,302,True,"Sex, drugs, racism and of course you ABC's. What more could you want in a kid's show!<br /><br />-----------------------"
+60,NEGATIVE,NEGATIVE,0.798695,0.201305,0.798695,True,473,True,"Just above the box i am typing in now, i was required to pick a number between 1 and 10, and rate this feature film. Unf"
+61,NEGATIVE,NEGATIVE,0.734877,0.265123,0.734877,True,148,True,NBC should be ashamed. I wouldn't allow my children to see this. I definitely would tell my church to stay away. This mo
+62,NEGATIVE,NEGATIVE,0.556562,0.443438,0.556562,True,513,True,"Film critics of the world, I apologize. It is your job to give advice to the moviegoing public so that they can wisely c"
+63,NEGATIVE,NEGATIVE,0.645347,0.354653,0.645347,True,124,False,There are certain scenes in this film (like the hero's first meeting with super-villainess Shirley Eaton) where it seems
+64,POSITIVE,POSITIVE,0.403328,0.596672,0.596672,True,147,True,this movie makes me laugh by even just thinking about it. such a smart comedy! very precise yet easy. the casting can no
+65,NEGATIVE,NEGATIVE,0.742843,0.257157,0.742843,True,254,True,"This movie is really bad, trying to create scientific explanations for zombies always ends up taking away credibility fr"
+66,NEGATIVE,NEGATIVE,0.682896,0.317104,0.682896,True,268,True,some would argue this is better mainly because of the acting; but it is indeed far worse for reasons that outweigh the i
+67,POSITIVE,POSITIVE,0.409011,0.590989,0.590989,True,61,False,Just a short comment! I want to say that I like this movie very much! Sandra Bullock is my favourite actress. I like the
+68,POSITIVE,POSITIVE,0.428139,0.571861,0.571861,True,218,True,"When I was young, I was a big fan of the Naked Gun movies but just recently I watched the show Police Sqaud! and I think"
+69,NEGATIVE,NEGATIVE,0.812768,0.187232,0.812768,True,178,True,"Seeing the names of the starring actors (Statham, Snipes and Phillippe) I thought that the movie should at least be dece"
+70,NEGATIVE,POSITIVE,0.270208,0.729792,0.729792,False,385,True,"I used to always love the bill because of its great script and characters, but lately i feel as though it has turned int"
+71,NEGATIVE,NEGATIVE,0.509549,0.490451,0.509549,True,366,True,I am a regular reader of Kathy Reichs' Temperance Brennan novels. As such I am extremely surprised she even consulted on
+72,NEGATIVE,NEGATIVE,0.773667,0.226333,0.773667,True,211,True,I saw this movie on the strength of the single positive review and I can only imagine that guy is a shill.<br /><br />Th
+73,POSITIVE,POSITIVE,0.46131,0.53869,0.53869,True,75,False,This movie is an amazing comedy.. the script is too funny.. if u watch it more than once you will enjoy it more. Though 
+74,NEGATIVE,NEGATIVE,0.719388,0.280612,0.719388,True,277,True,"I saw this movie, and I do like horror movies.<br /><br />I did not know what to expect, but as soon the movie was on hi"
+75,NEGATIVE,NEGATIVE,0.768736,0.231264,0.768736,True,74,False,A truly masterful piece of filmmaking. It managed to put me to sleep and to boggle my mind. So boring that it induces sl
+76,NEGATIVE,NEGATIVE,0.815693,0.184307,0.815693,True,364,True,This is going to be my first review on IMDb and I'm glad that the standard rating is 1 out of 10 because then I don't ha
+77,POSITIVE,NEGATIVE,0.687791,0.312209,0.687791,False,185,True,As far as I know this was my first experience with Icelandic movies. It's such a relief to see something else than your 
+78,NEGATIVE,NEGATIVE,0.715172,0.284828,0.715172,True,310,True,All I can do is echo the sentiment already expressed by some of the other commenters. This is CITY OF GOD meets HAPPY DA
+79,POSITIVE,POSITIVE,0.362775,0.637225,0.637225,True,126,False,"First, the positives: an excellent job at depicting urban landscapes to suit the mood of the film. Some of the shots cou"
+80,NEGATIVE,NEGATIVE,0.683975,0.316025,0.683975,True,346,True,"Now and again, a film comes around purely by accident that makes you doubt your sanity. We just finished studying the no"
+81,POSITIVE,POSITIVE,0.424352,0.575648,0.575648,True,383,True,What an awesome mini-series. The original TRAFFIK completely stole me away from anything else that was on. Far more enga
+82,NEGATIVE,NEGATIVE,0.509206,0.490794,0.509206,True,194,True,It has a bit of that indie queer edge that was hip in the 90s and which places an explicit sell-by date on the visual st
+83,POSITIVE,POSITIVE,0.266741,0.733259,0.733259,True,228,True,"I watched Pola X because Scott Walker composed the film score and I admire his music a lot. Frankly, I expected a somewh"
+84,POSITIVE,POSITIVE,0.478756,0.521244,0.521244,True,174,True,"You can tell that this is the first offering by the Director (who also wrote it), but you can also see the potential thi"
+85,POSITIVE,POSITIVE,0.255421,0.744579,0.744579,True,161,True,This film was incredible! Looked high budget but felt heartfelt and original like an Indie. The most amazing part of thi
+86,POSITIVE,POSITIVE,0.211973,0.788027,0.788027,True,310,True,"I viewed my videotape last night, for the first time in at least ten years. I found the work itself and the performances"
+87,NEGATIVE,NEGATIVE,0.744846,0.255154,0.744846,True,158,True,"Heart of Darkness was terrible. The novel was difficult enough to understand, but when a production company decides to r"
+88,POSITIVE,NEGATIVE,0.820416,0.179584,0.820416,False,1039,True,"i was having a horrid day but this movie grabbed me, and i couldn't put it down until the end... and i had forgotten abo"
+89,POSITIVE,POSITIVE,0.180076,0.819924,0.819924,True,213,True,"""Two Hands"" is an entertaining, funny story about Australian lowlifes. The screenplay contrasts the world of fast money "
+90,NEGATIVE,NEGATIVE,0.537172,0.462828,0.537172,True,416,True,"Just watched this today on TCM, where the other reviewers here saw it.<br /><br />Sorry that I was the only one to find "
+91,POSITIVE,POSITIVE,0.320033,0.679967,0.679967,True,246,True,Mr Baseball was a fun video rental with my Fiancé Susan Nauss. Susan said that she had been looking forward to seeing th
+92,NEGATIVE,NEGATIVE,0.607382,0.392618,0.607382,True,440,True,"""Opposing Force [1986]"" wasn't as good as ""Dr. Strangelove"" and it wasn't as good as ""The Bridge on the River Kwai"". Hec"
+93,POSITIVE,POSITIVE,0.196466,0.803534,0.803534,True,142,True,"Crackerjack is another classic Aussie film. As so many Australian films like The Castle, The Dish and Sunday Too Far Awa"
+94,NEGATIVE,POSITIVE,0.240481,0.759519,0.759519,False,438,True,Clearly this film was made for a newer generation that may or may not have had an inkling of Charles Bukowski's work. Th
+95,NEGATIVE,NEGATIVE,0.616724,0.383276,0.616724,True,208,True,"I've seen some terrible book-to-film adaptations in my day, but this one tops them all! The bizarrely unattractive cast "
+96,NEGATIVE,NEGATIVE,0.598544,0.401456,0.598544,True,256,True,I see that C. Thomas Howell has appeared in many movies since his heyday in the 80s as an accomplished young actor.<br /
+97,NEGATIVE,NEGATIVE,0.773347,0.226653,0.773347,True,73,False,Wow! What a movie if you want to blow your budget on the title and have it look real bad ask the guys that made this mov
+98,POSITIVE,NEGATIVE,0.663982,0.336018,0.663982,False,418,True,"There are few films that deal with things that I would consider myself an expert on, this one is.<br /><br />After some "
+99,POSITIVE,POSITIVE,0.177391,0.822609,0.822609,True,199,True,"One of the best! As being a fan of the civil war, I was very pleased with the first installment of the North and South t"
+100,NEGATIVE,NEGATIVE,0.796311,0.203689,0.796311,True,166,True,I wish I would have read more reviews and more opinions about this movie before I rented it. A waste of money. A waste o
+101,NEGATIVE,NEGATIVE,0.72203,0.27797,0.72203,True,150,True,"Today You Die was the 4th Seagal movie in a mini marathon I just held. Wow, I don't know where to start. He seems to mum"
+102,NEGATIVE,NEGATIVE,0.712565,0.287435,0.712565,True,246,True,"Stop me if you hard this one before, some cheerleaders, their coach and a couple guys are trapped within a cabin in the "
+103,POSITIVE,NEGATIVE,0.761035,0.238965,0.761035,False,77,False,"Great cult flick for MST-3K types: Richard Boone is a mess -- bad hair, arthritis, even his dark glasses aren't right; a"
+104,POSITIVE,NEGATIVE,0.584806,0.415194,0.584806,False,86,False,"I have fond memories of watching this when it came out. It's one of those films that you know is rubbish, even when you'"
+105,NEGATIVE,NEGATIVE,0.670525,0.329475,0.670525,True,200,True,"I turned this off within the first five minutes. It's very sick and disturbing, the moment I turned this off was when th"
+106,NEGATIVE,NEGATIVE,0.693717,0.306283,0.693717,True,242,True,"Family guy. When the show first aired, it was fresh, original, and actually quite funny. Now, I have stopped watching it"
+107,NEGATIVE,NEGATIVE,0.745072,0.254928,0.745072,True,80,False,"This movie defines the word ""confused"". All the actors stay true to the script. More's the pity, because the acting is f"
+108,NEGATIVE,NEGATIVE,0.68318,0.31682,0.68318,True,63,False,"This is, without a doubt, the most hilarious movie I've ever seen. Seriously, if the makers of this movie are ever disco"
+109,NEGATIVE,POSITIVE,0.487737,0.512263,0.512263,False,166,True,"Well, it is standard Hollywood schmaltz that you can see coming a mile off. It's enjoyable in parts but just oh so predi"
+110,POSITIVE,NEGATIVE,0.759423,0.240577,0.759423,False,206,True,"Rickman is sexy and good, but the ""stranger"" is less convincing - Reedus is sort of sexy, but he is not a consistent act"
+111,POSITIVE,POSITIVE,0.400687,0.599313,0.599313,True,367,True,"It was probably watching this TV movie that got me interested in the debate as to whether ""Anna"" was really Tsar Nichola"
+112,POSITIVE,POSITIVE,0.488161,0.511839,0.511839,True,371,True,I saw this fine flick shortly leaving college. As I sat there happily watching Alice go from repressed virgin to sexual 
+113,POSITIVE,POSITIVE,0.2456,0.7544,0.7544,True,483,True,"Every year there's one can't-miss much-anticipated red-hot big-budget title with the right combination of star, director"
+114,NEGATIVE,NEGATIVE,0.613046,0.386954,0.613046,True,151,True,Billed as a romantic comedy set against the early years of WWII it fails to deliver. The problem is that while beautiful
+115,POSITIVE,POSITIVE,0.323848,0.676152,0.676152,True,367,True,"This interesting film noir features three very good performances: Sanders, Patrick, and Blackmer. The scenes between San"
+116,POSITIVE,POSITIVE,0.429451,0.570549,0.570549,True,170,True,Wow. When I went to this film at the Toronto film festival I had no idea what I was in for. This movie takes you on an e
+117,NEGATIVE,NEGATIVE,0.625161,0.374839,0.625161,True,1453,True,"* Some spoilers *<br /><br />This movie is sometimes subtitled ""Life Everlasting."" That's often taken as reference to th"
+118,POSITIVE,POSITIVE,0.180862,0.819138,0.819138,True,187,True,"Deepa Mehta's ""Fire"" is groundbreaking, bold, and artistic. A masterful social commentary on the plight of the women fro"
+119,POSITIVE,NEGATIVE,0.668222,0.331778,0.668222,False,565,True,Bears about as much resemblance to Dean Koontz's novel as Jessica Simpson does to a rocket scientist. If you've read the
+120,NEGATIVE,NEGATIVE,0.645508,0.354492,0.645508,True,544,True,"To be fair, it has been several years since I watched the bile committed to celluloid known as ""Here on Earth,"" so forgi"
+121,NEGATIVE,NEGATIVE,0.540825,0.459175,0.540825,True,143,True,"I have read each and every one of Baroness Orczy's Scarlet Pimpernel books. Counting this one, I have seen 3 pimpernel m"
+122,NEGATIVE,NEGATIVE,0.615037,0.384963,0.615037,True,409,True,"This film was a Mexican made horror film from the late 60s. It's not that good, but really not so bad either. There is p"
+123,POSITIVE,POSITIVE,0.210957,0.789043,0.789043,True,73,False,"Found this movie in a rental store. Never heard about it before, but it was a good movie. Great acting, and thrilling st"
+124,POSITIVE,POSITIVE,0.168527,0.831473,0.831473,True,173,True,Johnny Crawford is great in this movie of a troubled teen coming of age in a generation that was in the middle of a cult
+125,POSITIVE,NEGATIVE,0.752107,0.247893,0.752107,False,159,True,"OK...ths film (like Segal's last few films) once again goes beyond the ""knock 'em down, kick 'em in the groin, shoot 'em"
+126,NEGATIVE,NEGATIVE,0.699741,0.300259,0.699741,True,158,True,"imagine if you took the Christ myth, mixed it with a healthy dose of porn, against a backdrop of bad sci-fi blackxploita"
+127,POSITIVE,NEGATIVE,0.716787,0.283213,0.716787,False,822,True,"Finally! Third time lucky. This film has been always been on my mind, but my first viewing I forgot about it and only ca"
+128,NEGATIVE,NEGATIVE,0.581688,0.418312,0.581688,True,259,True,This is not a good movie. It is a tried remake of the English movie 'The Hitch'. But it insults the original one. This i
+129,POSITIVE,POSITIVE,0.211413,0.788587,0.788587,True,409,True,"Jessica Bohl plays Daphne, the sexually precocious suburban teenager struggling with the hell of high school. Daphne's n"
+130,NEGATIVE,NEGATIVE,0.538548,0.461452,0.538548,True,190,True,A woman in love with her husband (he's suicidal) decides to have a baby to save his life. She's been to a fertility clin
+131,NEGATIVE,NEGATIVE,0.801233,0.198767,0.801233,True,157,True,Is this supposed to be serious? I hope not. This is one of the most pathetically hilarious movies I've ever seen. Given 
+132,NEGATIVE,NEGATIVE,0.517511,0.482489,0.517511,True,402,True,"This should be re-named ""Everybody Loves Sebastian"". The 1983 rural go-nowhere town high school junior (or senior? - the"
+133,POSITIVE,POSITIVE,0.423698,0.576302,0.576302,True,381,True,"I was at the premier of the movie last night in Rome. I am not an expert in the book, however there are a great deal of "
+134,POSITIVE,POSITIVE,0.256906,0.743094,0.743094,True,575,True,"""Lights of New York"" originally started out as an experimental two reel Vitaphone short that eventually snowballed into "
+135,POSITIVE,NEGATIVE,0.506786,0.493214,0.506786,False,140,True,"Heath Ledgers acting in this film really bugs me, but overall its a great watch. Bryan Brown is excellent when i dont no"
+136,NEGATIVE,POSITIVE,0.443289,0.556711,0.556711,False,1122,True,"I have read several reviews that ask the question, ""Why was this film made""? I myself found that question looming in my "
+137,NEGATIVE,NEGATIVE,0.793371,0.206629,0.793371,True,610,True,Let me break down this film for you...<br /><br />The first fifteen minutes are a showcase for terrible special effects.
+138,POSITIVE,POSITIVE,0.214894,0.785106,0.785106,True,56,False,This film is brilliant it has cute little dolphins in it and its a great storyline and it has elijah wood in it which ma
+139,POSITIVE,POSITIVE,0.320284,0.679716,0.679716,True,81,False,"Don't listen to what the critics have always said about this cute, charming little movie. Madonna is GREAT in this cleve"
+140,NEGATIVE,NEGATIVE,0.620773,0.379227,0.620773,True,82,False,I thought it will be a Ok movie after seeing the commercials about it. It was funny at some parts and some very nasty. T
+141,POSITIVE,POSITIVE,0.202744,0.797256,0.797256,True,727,True,"UK-born Australian helmer Alex Frayne calls for attention with his strange, necessitating a meticulous read, visually st"
+142,POSITIVE,NEGATIVE,0.511778,0.488222,0.511778,False,243,True,"Before seeing this film, I suggest the viewer puts away any expectations that the victims of the crimes depicted will ge"
+143,NEGATIVE,NEGATIVE,0.814901,0.185099,0.814901,True,181,True,Get Smart should be titled Get Stupid. There is not one funny line or gag in the entire film. This film is so bad it mak
+144,POSITIVE,NEGATIVE,0.603273,0.396727,0.603273,False,225,True,This is a cute little French silent comedy about a man who bets another that he can't stay in this castle for one hour d
+145,NEGATIVE,NEGATIVE,0.673287,0.326713,0.673287,True,238,True,"First off, I just want to say that this show could've done well, way better than it's doing now. What brought it down wa"
+146,NEGATIVE,NEGATIVE,0.632874,0.367126,0.632874,True,137,True,"""Tenchi Muyo In Love 2"" is the third Tenchi movie. It seemed that its creators took elements from the first two to make "
+147,NEGATIVE,POSITIVE,0.309641,0.690359,0.690359,False,328,True,"""Black Dragons"" is a second feature WWII propaganda film popular at the time. It's not as bad as some would have you bel"
+148,POSITIVE,POSITIVE,0.185723,0.814277,0.814277,True,471,True,Wagon Master is a very unique film amongst John Ford's work. Mainly because it's the only one that is based on a story w
+149,NEGATIVE,NEGATIVE,0.742876,0.257124,0.742876,True,146,True,"In this film Gary Oldman plays a defense attorney, who was formerly a prosecutor. He is a bit tormented, but is more or "
+150,NEGATIVE,NEGATIVE,0.777261,0.222739,0.777261,True,197,True,"Was this supposed to be funny? This is one of those films that just doesn't work. The first one, Bruce Almighty with Jim"
+151,NEGATIVE,POSITIVE,0.493878,0.506122,0.506122,False,243,True,It's a shame Barry Humphries infamous Sir Les Patterson character had it's film debut in this under cooked spy/comedy.<b
+152,NEGATIVE,NEGATIVE,0.761598,0.238402,0.761598,True,121,False,"I really hoped for the best with this one, but it just didn't happen. Financed at a very non-dutch manner and still look"
+153,POSITIVE,POSITIVE,0.380431,0.619569,0.619569,True,73,False,I would say to the foreign people who have seen this movie and who did not understand it that it is normal because it wa
+154,NEGATIVE,NEGATIVE,0.786287,0.213713,0.786287,True,102,False,"This movie was absolutely one of the worst movies I have ever seen. The plot could have been made to work, had the movie"
+155,NEGATIVE,POSITIVE,0.235376,0.764624,0.764624,False,466,True,1st watched 2/18/2007 - 4 out of 10(Dir-Leon Leonard): Fair adventure movie based on a novel by the author of Moby Dick 
+156,POSITIVE,POSITIVE,0.36471,0.63529,0.63529,True,58,False,This is a great horror movie. Great Plot. And a person with a fear of midgets will definately love the evil midget! This
+157,POSITIVE,NEGATIVE,0.71989,0.28011,0.71989,False,67,False,I happened to leave HBO on last night following Six Feet Under. What ran next has left me speechless. What an incredible
+158,POSITIVE,NEGATIVE,0.613345,0.386655,0.613345,False,469,True,"Having just borrowing the Series one DVD collection from my somewhat obsessive brother, I was expecting to get through t"
+159,NEGATIVE,NEGATIVE,0.735092,0.264908,0.735092,True,67,False,"Steve Martin looks like he's had a face lift. Something very strange about his face. I usually like anything Steve does,"
+160,NEGATIVE,NEGATIVE,0.796471,0.203529,0.796471,True,160,True,I wasn't sure where this was headed until the ending. when it turned out that this was all a liberal conspiracy to hand 
+161,POSITIVE,POSITIVE,0.374252,0.625748,0.625748,True,182,True,I have noticed that people have asked if anyone has this show. I have all 26 episodes that aired in the U.S. and will be
+162,NEGATIVE,NEGATIVE,0.691987,0.308013,0.691987,True,75,False,"Okay, to be fair this movie did have an interesting concept. Given a few script rewrites, some decent actors and a budge"
+163,NEGATIVE,NEGATIVE,0.533451,0.466549,0.533451,True,214,True,This short was director Del Lord's last and only Shemp short. The problem: It was quite weak and the cafe scene was pret
+164,NEGATIVE,NEGATIVE,0.817791,0.182209,0.817791,True,317,True,I haven't laughed so much in a theater in years. The only problem is that it was not the intent of the movie to make my 
+165,POSITIVE,NEGATIVE,0.60875,0.39125,0.60875,False,678,True,There is a serious scene in this movie. A scene that lets you know that his film won't be pulling many cheap punches. It
+166,POSITIVE,NEGATIVE,0.546779,0.453221,0.546779,False,150,True,Everyone knows that Lindburgh succeeded in the first transatlantic flight. So how can there be any suspense or intrigue 
+167,NEGATIVE,POSITIVE,0.397531,0.602469,0.602469,False,190,True,"The director seems like a good, solid man. His parents struggle with the same issues we all cope with. They strayed from"
+168,NEGATIVE,NEGATIVE,0.743716,0.256284,0.743716,True,301,True,I waited a long time to finally see what I thought was going to be a fun caper flick and was shocked to discover shoddy 
+169,NEGATIVE,NEGATIVE,0.576809,0.423191,0.576809,True,342,True,"Don't get me wrong, I love the TV series of League Of Gentlemen. It was funny, twisted and completely inspired. I was lo"
+170,POSITIVE,POSITIVE,0.361672,0.638328,0.638328,True,202,True,"I saw this movie with my mother, and I loved it! It was such a sweet story, (Not to mention funny because of the support"
+171,POSITIVE,POSITIVE,0.177291,0.822709,0.822709,True,291,True,Chris Smith's American Movie is an insightful examination of the American dream. The movie focuses around Mark Borchardt
+172,NEGATIVE,NEGATIVE,0.797325,0.202674,0.797325,True,149,True,OK I watched this movie. Someone needs to kick me. WHY must the Olsen twins insist on subjecting the world to this putri
+173,NEGATIVE,NEGATIVE,0.675788,0.324212,0.675788,True,265,True,"Gordon Scott made some good Tarzan movies, but this is not one of them.<br /><br />As I watched it, wincing at the bad, "
+174,NEGATIVE,NEGATIVE,0.593582,0.406418,0.593582,True,443,True,This movie was playing on Lifetime Movie Network last month and I decided to check it out. I watched for the first 20 mi
+175,NEGATIVE,NEGATIVE,0.693189,0.306811,0.693189,True,641,True,"If you have ever wanted to know more about cab drivers, then this is an excellent movie to watch, for informational purp"
+176,POSITIVE,POSITIVE,0.48453,0.51547,0.51547,True,224,True,"The episode begins with scenes of a dead woman bather washed up on the shore, a forlorn Jim strolling along the beach lo"
+177,POSITIVE,NEGATIVE,0.636901,0.363099,0.636901,False,399,True,"For all of us American Deneuve fans, this little gem is a little tough to get ahold of. Fortunately, I found myself so w"
+178,POSITIVE,NEGATIVE,0.572107,0.427893,0.572107,False,146,True,"I have seen many many movies and this just totally blew my mind. The trauma, the suspense is just amazing. I ended so wo"
+179,POSITIVE,POSITIVE,0.325782,0.674218,0.674218,True,173,True,"How is bear´s paw, elephant´s trunk or monkey´s brain for dinner? Let Tsui Hark tell you in this wonderful and lighthear"
+180,POSITIVE,NEGATIVE,0.802269,0.197731,0.802269,False,105,False,"not really sure what to make of this movie. very weird, very artsy. not the kind of movie you watch because it has a com"
+181,POSITIVE,POSITIVE,0.426087,0.573913,0.573913,True,213,True,I absolutely loved this movie! It's my number one favorite. Although there were a few flaws (what movie doesn't have fla
+182,POSITIVE,NEGATIVE,0.503707,0.496293,0.503707,False,146,True,"It starts a little slow but give it a chance. In the spirit of the ""Wackiest Ship in the Arm"" and the ""Pink Sub"" this mo"
+183,NEGATIVE,NEGATIVE,0.774594,0.225405,0.774594,True,138,True,"The only reason I rented the movie was to see Jeri Ryan in it! OMG that was the most boring, pointless movie I've ever s"
+184,NEGATIVE,NEGATIVE,0.65795,0.34205,0.65795,True,171,True,"Koyaanisqatsi and Powaqqatsi are both Beautiful films, but this final installment of the trilogy is a major let down. Th"
+185,POSITIVE,NEGATIVE,0.709487,0.290513,0.709487,False,184,True,"This was one of the few shows that my wife and I agreed on watching. I was upset to hear that it was canceled, especiall"
+186,NEGATIVE,POSITIVE,0.383018,0.616982,0.616982,False,322,True,"I keep waiting for Peter Fonda to start acting. For someone who comes from such a talented family, it's a mystery to me "
+187,NEGATIVE,POSITIVE,0.377504,0.622495,0.622495,False,153,True,"Purchased this film for one dollar and figured I could never go wrong, my big mistake was watching it. Enjoyed the actin"
+188,POSITIVE,POSITIVE,0.387706,0.612294,0.612294,True,191,True,"When I first saw this film around 6 months ago, I considered it interesting, but little more. But it stuck with me. That"
+189,NEGATIVE,NEGATIVE,0.739721,0.260279,0.739721,True,263,True,I saw this movie (unfortunately) because it was the only option at that time and because David Zucker was the director. 
+190,POSITIVE,POSITIVE,0.260148,0.739852,0.739852,True,228,True,"Joline (Heather Graham) married Carl (Luke Wilson) and about five hundred and some days later, Carl is very depressed an"
+191,NEGATIVE,NEGATIVE,0.659683,0.340317,0.659683,True,192,True,I was told about this film from a friend who saw it late night during the week He told me it was so bad that I had to se
+192,NEGATIVE,POSITIVE,0.430988,0.569012,0.569012,False,426,True,"Like ""The Blair Witch Project"" before it, ""Hatchet"" has garnered its own fair share of publicity from the bottom-on-up ("
+193,POSITIVE,POSITIVE,0.351755,0.648245,0.648245,True,183,True,Being a fan of time travel stories I was surprised that there was no 'device' that sent Russell Johnson's character thro
+194,POSITIVE,NEGATIVE,0.759578,0.240422,0.759578,False,276,True,"A Great show.<br /><br />First, to the people who don't like it..Don't like it, then DON'T WATCH IT...<br /><br />This i"
+195,POSITIVE,NEGATIVE,0.561651,0.438349,0.561651,False,205,True,"This was a very funny, fast paced movie. I watched it more than once and am keeping my rental around to show others. I'd"
+196,NEGATIVE,NEGATIVE,0.63266,0.36734,0.63266,True,559,True,Imagine if you will an alternative universe where someone has made SEVEN where instead of a talented cast and crew they'
+197,POSITIVE,POSITIVE,0.397992,0.602008,0.602008,True,118,False,My favourite police series of all time turns to a TV-film. Does it work? Yes. Gee runs for mayor and gets shot. The Homi
+198,POSITIVE,NEGATIVE,0.561173,0.438827,0.561173,False,398,True,"Tumbling Doll of Flesh (aka Niku daruma and Psycho: The Snuff Reels) This was on my want list for quite a while, and the"
+199,POSITIVE,POSITIVE,0.244555,0.755445,0.755445,True,175,True,"Though this film doesn't stand out particularly from the movie crowd, its still a very nice film to sit down and watch w"

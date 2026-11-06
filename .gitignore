@@ -1,0 +1,25 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.cache/
+huggingface_cache/
+
+data/
+artifacts/checkpoints/*.pt
+artifacts/predictions/*
+*.pt
+.pytest_cache/
+
+# Outputs
+outputs/checkpoints/
+outputs/final_model/
+outputs/logs/
+outputs/*.png
+outputs/*.csv
+outputs/*.json
+!outputs/reports/final_metrics.json
+
+
+# Archive / Backups
+archive/

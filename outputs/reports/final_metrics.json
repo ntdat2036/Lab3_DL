@@ -1,0 +1,112 @@
+{
+    "schema_version": "1.1.0",
+    "run_id": "run_distilbert_imdb_canonical",
+    "dataset": "imdb",
+    "base_model": "distilbert-base-uncased",
+    "seed": 42,
+    "epochs": 2,
+    "batch_size": 16,
+    "learning_rate": 2e-05,
+    "max_length": 128,
+    "train_samples": 800,
+    "validation_samples": 200,
+    "test_samples": 200,
+    "test_accuracy_ratio": 0.745,
+    "test_macro_f1_ratio": 0.742677665935064,
+    "test_precision_ratio": 0.7475703324808184,
+    "test_recall_ratio": 0.7423878205128205,
+    "test_accuracy": 74.5,
+    "test_macro_f1": 74.2677665935064,
+    "test_precision": 74.75703324808184,
+    "test_recall": 74.23878205128204,
+    "test_loss": 0.5565013289451599,
+    "correct_predictions": 149,
+    "total_samples": 200,
+    "error_count": 51,
+    "wilson_95_ci": [
+        68.03694869280503,
+        80.03959701719725
+    ],
+    "wilson_95_ci_ratio": [
+        0.6803694869280502,
+        0.8003959701719725
+    ],
+    "majority_baseline": 52.0,
+    "majority_baseline_train_label": "NEGATIVE",
+    "untrained_head_val_baseline": 44.0,
+    "finetuned_val_accuracy": 76.5,
+    "truncation_rate_test": 86.0,
+    "truncation_analysis": {
+        "non_truncated": {
+            "total": 28,
+            "errors": 6,
+            "error_rate_pct": 21.428571428571427
+        },
+        "truncated": {
+            "total": 172,
+            "errors": 45,
+            "error_rate_pct": 26.16279069767442
+        },
+        "fisher_exact_p_value": 0.8152978095624043,
+        "fisher_exact_odds_ratio": 0.7696969696969697
+    },
+    "gain": {
+        "accuracy_gain_vs_majority_percentage_points": 22.5,
+        "accuracy_gain_same_val_percentage_points": 32.5,
+        "cross_split_reference_vs_untrained_val_percentage_points": 30.5,
+        "mcnemar_exact_test": {
+            "model_only_correct": 65,
+            "majority_only_correct": 20,
+            "p_value": 1.03e-06
+        }
+    },
+    "confusion_matrix": [
+        [
+            84,
+            20
+        ],
+        [
+            31,
+            65
+        ]
+    ],
+    "classification_report": {
+        "NEGATIVE": {
+            "precision": 0.7304347826086957,
+            "recall": 0.8076923076923077,
+            "f1-score": 0.7671232876712328,
+            "support": 104.0
+        },
+        "POSITIVE": {
+            "precision": 0.7647058823529411,
+            "recall": 0.6770833333333334,
+            "f1-score": 0.7182320441988951,
+            "support": 96.0
+        },
+        "accuracy": 0.745,
+        "macro avg": {
+            "precision": 0.7475703324808184,
+            "recall": 0.7423878205128205,
+            "f1-score": 0.742677665935064,
+            "support": 200.0
+        },
+        "weighted avg": {
+            "precision": 0.7468849104859335,
+            "recall": 0.745,
+            "f1-score": 0.7436554908045108,
+            "support": 200.0
+        }
+    },
+    "training_time_seconds": 391.42,
+    "provenance": {
+        "execution_date": "2026-11-06",
+        "python_version": "3.13.5",
+        "torch_version": "2.15.0+cpu",
+        "transformers_version": "4.56.0",
+        "device": "cpu",
+        "total_parameters": 66955010,
+        "model_safetensors_sha256": "82907cd48c30bfcf767ff2c469f83da3a87d060159a06e839c542c1782de8b28",
+        "predictions_file": "outputs/reports/predictions.csv",
+        "reproducibility_notes": "Tệp predictions.csv được trích xuất trực tiếp từ lần chạy hiện tại (149/200 mẫu đúng, 51 lỗi); kiểm chứng nạp checkpoint bảo toàn trọng số huấn luyện."
+    }
+}

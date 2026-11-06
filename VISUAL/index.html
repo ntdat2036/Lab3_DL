@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Báo Cáo Tổng Thể Dự Án — Practice 3 Hugging Face</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css?v=vertical_white_theme">
+</head>
+<body>
+
+  <!-- Top Navigation Header -->
+  <header>
+    <div class="brand">
+      <div class="brand-icon">⚡</div>
+      <div class="brand-text">
+        <h1>BÁO CÁO TỔNG THỂ DỰ ÁN (PRACTICE 3)</h1>
+        <p>Hugging Face Transformers — Sentiment Analysis & Fine-tuning DistilBERT</p>
+      </div>
+    </div>
+
+    <div class="header-badges">
+      <div class="status-badge">
+        <span>🤖 Model: distilbert-base-uncased</span>
+      </div>
+      <div class="status-badge">
+        <span>🎬 Data: IMDb (1,200 mẫu)</span>
+      </div>
+      <div class="status-badge live-badge">
+        <span class="pulse-dot"></span>
+        <span>Báo Cáo Cục Bộ (Local 127.0.0.1)</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sticky Reading Progress Bar -->
+  <nav class="table-of-contents">
+    <div class="toc-container">
+      <span class="toc-title">MỤC LỤC BÁO CÁO:</span>
+      <a href="#muc-1" class="toc-link">1. Tổng Quan & Mục Tiêu</a>
+      <a href="#muc-2" class="toc-link">2. Độ Chính Xác & Baseline</a>
+      <a href="#muc-3" class="toc-link">3. 6 Chỉ Số Giám Sát Cốt Lõi</a>
+      <a href="#muc-4" class="toc-link">4. Toàn Bộ 4 Biểu Đồ Thực Nghiệm</a>
+      <a href="#muc-5" class="toc-link">5. Quy Trình 7 Bước Tinh Chỉnh</a>
+      <a href="#muc-6" class="toc-link">6. Phân Tích Ca Sai Số Điển Hình</a>
+      <a href="#muc-7" class="toc-link">7. Kiểm Toán Toàn Vẹn 43 Tệp Tin</a>
+    </div>
+  </nav>
+
+  <!-- Main Vertical Reading Document -->
+  <main class="reading-container">
+
+    <!-- MỤC 1: TỔNG QUAN DỰ ÁN -->
+    <article id="muc-1" class="doc-section">
+      <div class="section-marker">MỤC 01</div>
+      <h2 class="doc-heading">1. Tổng Quan Dự Án & Định Hình Bài Toán</h2>
+      <div class="doc-divider"></div>
+      
+      <p class="paragraph">
+        Dự án <strong>Practice 3: Get Started with Hugging Face</strong> thuộc khuôn khổ môn học Học Sâu (Deep Learning). Mục tiêu cốt lõi là làm chủ hệ sinh thái <code>transformers</code>, <code>datasets</code> và <code>evaluate</code> thông qua bài toán thực tế: <strong>Phân loại cảm xúc nhị phân (Binary Sentiment Analysis)</strong> trên các bài phê bình phim từ tập dữ liệu kinh điển <code>stanfordnlp/imdb</code>.
+      </p>
+
+      <div class="callout-box info">
+        <div class="callout-title">📌 Phạm vi & Thông số kiến trúc áp dụng:</div>
+        <ul class="doc-list">
+          <li><strong>Mô hình nền tảng:</strong> <code>distilbert-base-uncased</code> — phiên bản chưng cất tri thức (Knowledge Distillation) từ BERT-base, giữ nguyên 97% năng lực ngôn ngữ nhưng nhẹ hơn 40% tham số (66M so với 110M) và suy luận nhanh hơn 60%.</li>
+          <li><strong>Quy mô phân chia dữ liệu:</strong> 800 mẫu Huấn luyện (Train), 200 mẫu Kiểm định (Validation) tách với <code>seed=42</code>, và 200 mẫu Kiểm thử độc lập (Test).</li>
+          <li><strong>Cơ chế tối ưu:</strong> Tích hợp <code>DataCollatorWithPadding</code> để thực hiện đệm động (Dynamic Padding) theo từng mini-batch, tránh lãng phí tính toán padding trên các câu ngắn thay vì đệm tĩnh cố định toàn bộ dữ liệu.</li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- MỤC 2: KẾT QUẢ TỔNG QUÁT & ĐỐI SOÁT BASELINE -->
+    <article id="muc-2" class="doc-section">
+      <div class="section-marker">MỤC 02</div>
+      <h2 class="doc-heading">2. Kết Quả Định Lượng & Đối Soát Mốc Cơ Sở (Baselines)</h2>
+      <div class="doc-divider"></div>
+
+      <p class="paragraph">
+        Để đánh giá trung thực giá trị của mô hình sau khi tinh chỉnh (Fine-tuning), toàn bộ số liệu đều được đối chứng với hai mốc cơ sở khoa học không cần học (Zero-learning baselines):
+      </p>
+
+      <div class="vertical-score-hero">
+        <div class="score-badge-label">KẾT QUẢ ĐO ĐẠC TRÊN TẬP TEST ĐỘC LẬP (200 MẪU)</div>
+        <div id="dyn-score-number" class="big-score-number">74.50%</div>
+        <div id="dyn-score-subtext" class="score-subtext">149 / 200 bài đánh giá phim được phân loại chính xác nhãn POSITIVE / NEGATIVE</div>
+        
+        <div class="gain-comparison-row">
+          <div class="gain-item green">
+            <span id="dyn-gain-majority" class="gain-val">▲ +22.50 điểm %</span>
+            <span class="gain-lbl">Cùng tập Test: vs Majority (52.00%)</span>
+          </div>
+          <div class="gain-item green">
+            <span id="dyn-gain-val" class="gain-val">▲ +32.50 điểm %</span>
+            <span class="gain-lbl">Cùng tập Val: 44.00% ➔ 76.50%</span>
+          </div>
+          <div class="gain-item purple">
+            <span id="dyn-gain-untrained" class="gain-val">+30.50 điểm %</span>
+            <span class="gain-lbl">Đối chiếu chéo: Val ➔ Test (Tham chiếu)</span>
+          </div>
+          <div class="gain-item blue">
+            <span class="gain-val">95% CI</span>
+            <span id="dyn-ci-text" class="gain-lbl">Khoảng tin cậy Wilson: [68.04%, 80.04%]</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bảng số liệu chi tiết -->
+      <table class="report-table">
+        <thead>
+          <tr>
+            <th>Chỉ Số Kiểm Định</th>
+            <th>Mốc Untrained (Val)</th>
+            <th>Mốc Majority (Test)</th>
+            <th>Fine-tuned DistilBERT</th>
+            <th>Mức Tăng Trưởng / Đối Chiếu</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Test Accuracy (Độc lập)</strong></td>
+            <td>44.00% (Val)</td>
+            <td>52.00% (Test)</td>
+            <td><strong id="dyn-tbl-acc" class="text-highlight">74.50%</strong></td>
+            <td><span class="tag green">+22.50 điểm %</span> (vs Majority trên Test)<br><span class="tag purple">Chéo: +30.50%</span> (vs Untrained Val)</td>
+          </tr>
+          <tr>
+            <td><strong>Validation Accuracy</strong></td>
+            <td>44.00% (Val)</td>
+            <td>—</td>
+            <td><strong class="text-highlight">76.50%</strong></td>
+            <td><span class="tag green">+32.50 điểm %</span> (Gain cùng tập Val)</td>
+          </tr>
+          <tr>
+            <td><strong>Macro F1-Score</strong></td>
+            <td>—</td>
+            <td>—</td>
+            <td><strong id="dyn-tbl-f1">74.27%</strong></td>
+            <td>Cân bằng hài hòa 2 nhãn</td>
+          </tr>
+          <tr>
+            <td><strong>Macro Precision</strong></td>
+            <td>—</td>
+            <td>—</td>
+            <td><strong id="dyn-tbl-prec">74.76%</strong></td>
+            <td>Độ chuẩn xác khi dự đoán</td>
+          </tr>
+          <tr>
+            <td><strong>Macro Recall</strong></td>
+            <td>—</td>
+            <td>—</td>
+            <td><strong id="dyn-tbl-rec">74.24%</strong></td>
+            <td>Tỷ lệ bao phủ mẫu thật</td>
+          </tr>
+          <tr>
+            <td><strong>Test Loss (Cross-Entropy)</strong></td>
+            <td>—</td>
+            <td>—</td>
+            <td><strong id="dyn-tbl-loss">0.5565</strong></td>
+            <td>Sai số hội tụ tốt trên dữ liệu mới</td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+
+    <!-- MỤC 3: 6 CHỈ SỐ GIÁM SÁT CỐT LÕI -->
+    <article id="muc-3" class="doc-section">
+      <div class="section-marker">MỤC 03</div>
+      <h2 class="doc-heading">3. Giám Sát Chi Tiết 6 Chỉ Số Huấn Luyện Cốt Lõi</h2>
+      <div class="doc-divider"></div>
+
+      <p class="paragraph">
+        Quá trình huấn luyện mô hình được giám sát liên tục theo chiều dọc từ lúc khởi tạo đến khi kết thúc 2 epoch tối ưu hóa (100 optimization steps):
+      </p>
+
+      <div class="vertical-metrics-list">
+        
+        <!-- 1. Training Loss -->
+        <div class="metric-row-card">
+          <div class="row-card-left">
+            <span class="icon-circle">🔻</span>
+            <div>
+              <h4 class="row-title">1. Training Loss (Sai Số Trên Tập Huấn Luyện)</h4>
+              <p class="row-desc">Hàm mất mát Cross-Entropy tính trên từng batch 16 mẫu sau bước lan truyền xuôi và ngược.</p>
+            </div>
+          </div>
+          <div class="row-card-right">
+            <div class="row-stat">
+              <span class="val-big">0.503</span>
+              <span class="val-note">Step 10: 0.694 ➔ Step 50: 0.615 ➔ Step 100: <strong>0.503</strong> (-27.5%)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Validation Loss -->
+        <div class="metric-row-card">
+          <div class="row-card-left">
+            <span class="icon-circle">🔸</span>
+            <div>
+              <h4 class="row-title">2. Validation Loss (Sai Số Trên Tập Kiểm Định)</h4>
+              <p class="row-desc">Đánh giá khả năng tổng quát hóa trên 200 mẫu validation độc lập tại cuối mỗi chu kỳ epoch.</p>
+            </div>
+          </div>
+          <div class="row-card-right">
+            <div class="row-stat">
+              <span class="val-big">0.512</span>
+              <span class="val-note">Step 0: 0.697 ➔ Step 50: 0.600 ➔ Step 100: <strong>0.512</strong> (-26.5%)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Accuracy -->
+        <div class="metric-row-card">
+          <div class="row-card-left">
+            <span class="icon-circle">🎯</span>
+            <div>
+              <h4 class="row-title">3. Validation Accuracy (Độ Chính Xác Huấn Luyện)</h4>
+              <p class="row-desc">Tỷ lệ phân loại nhãn chuẩn xác qua từng epoch đối chiếu với mốc ngẫu nhiên ban đầu.</p>
+            </div>
+          </div>
+          <div class="row-card-right">
+            <div class="row-stat">
+              <span class="val-big" style="color: #059669;">76.50%</span>
+              <span class="val-note">Untrained: 44.0% ➔ Hết Ep 1: 69.5% ➔ Hết Ep 2: <strong>76.5%</strong> (+32.50 điểm %)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Learning Rate -->
+        <div class="metric-row-card">
+          <div class="row-card-left">
+            <span class="icon-circle">📉</span>
+            <div>
+              <h4 class="row-title">4. Learning Rate (Tốc Độ Học Của Bộ Tối Ưu AdamW)</h4>
+              <p class="row-desc">Điều chỉnh tốc độ học theo lịch trình suy giảm tuyến tính: Linear Decay (warmup mặc định = 0).</p>
+            </div>
+          </div>
+          <div class="row-card-right">
+            <div class="row-stat">
+              <span class="val-big" style="font-size: 1.6rem;">2.0e-5 ➔ 0.0</span>
+              <span class="val-note">Khởi đầu 0.00002, giảm dần đều về 0 tại Step 100 để hội tụ chuẩn</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Epoch -->
+        <div class="metric-row-card">
+          <div class="row-card-left">
+            <span class="icon-circle">📅</span>
+            <div>
+              <h4 class="row-title">5. Epoch (Tiến Trình Huấn Luyện Chu Kỳ)</h4>
+              <p class="row-desc">Tổng số chu kỳ duyệt qua toàn bộ 800 mẫu với kích thước batch 16 mẫu/bước.</p>
+            </div>
+          </div>
+          <div class="row-card-right">
+            <div class="row-stat">
+              <span class="val-big">2 / 2</span>
+              <span class="val-note">Tổng số 100 optimization steps (800 / 16 × 2), chạy mượt trên CPU</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Overfitting Detection -->
+        <div class="metric-row-card success-border">
+          <div class="row-card-left">
+            <span class="icon-circle" style="background: rgba(5,150,105,0.1); color: #059669;">🛡️</span>
+            <div>
+              <h4 class="row-title">6. Overfitting Detection (Kiểm Định Học Thuộc Dữ Liệu)</h4>
+              <p class="row-desc">So sánh khoảng cách độ lệch: Δ Loss = Val Loss (0.512) - Train Loss (0.503).</p>
+            </div>
+          </div>
+          <div class="row-card-right">
+            <div class="row-stat">
+              <span class="val-big" style="color: #059669; font-size: 1.5rem;">+0.009 (Độ lệch nhỏ)</span>
+              <span class="val-note">Chưa thấy dấu hiệu quá khớp rõ ràng trong 2 epochs; lưu Best Checkpoint (Epoch 2)</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </article>
+
+    <!-- MỤC 4: TOÀN BỘ 4 BIỂU ĐỒ THỰC NGHIỆM ĐỒ HỌA (THEO CHIỀU DỌC) -->
+    <article id="muc-4" class="doc-section">
+      <div class="section-marker">MỤC 04</div>
+      <h2 class="doc-heading">4. Toàn Bộ 4 Biểu Đồ Thực Nghiệm Đồ Họa Của Dự Án</h2>
+      <div class="doc-divider"></div>
+
+      <p class="paragraph">
+        Toàn bộ 4 biểu đồ dưới đây được sinh ra tự động trong quá trình chạy mã nguồn và lưu tại thư mục <code>outputs/reports/</code>. Từng biểu đồ được hiển thị tuần tự theo chiều dọc kèm chú giải phân tích chuyên sâu:
+      </p>
+
+      <!-- Biểu đồ 1 -->
+      <div class="vertical-chart-block">
+        <div class="chart-header-row">
+          <span class="chart-index">BIỂU ĐỒ 4.1</span>
+          <h3 class="chart-title">Đường Cong Hàm Mất Mát & Độ Chính Xác (Training Curves)</h3>
+          <span class="chart-filename">outputs/reports/training_curves.png</span>
+        </div>
+        <p class="chart-caption">
+          Đồ thị bên trái biểu diễn đường cong hàm mất mát: <strong>Training Loss</strong> (đỏ tròn nét liền) giảm đều đặn từ 0.694 về 0.503; <strong>Validation Loss</strong> (xanh vuông nét đứt) giảm từ 0.697 về 0.512. Đồ thị bên phải biểu diễn <strong>Validation Accuracy</strong> tăng từ 44.0% lên 76.5%, bứt phá mạnh qua mốc tham chiếu đa số (Train Majority Ref 52.0%).
+        </p>
+        <div class="chart-image-wrap" onclick="openModal('../outputs/reports/training_curves.png')">
+          <img src="../outputs/reports/training_curves.png" alt="Training Curves" loading="lazy">
+          <div class="zoom-badge">🔍 Nhấp chuột để phóng to toàn màn hình</div>
+        </div>
+      </div>
+
+      <!-- Biểu đồ 2 -->
+      <div class="vertical-chart-block">
+        <div class="chart-header-row">
+          <span class="chart-index">BIỂU ĐỒ 4.2</span>
+          <h3 class="chart-title">So Sánh Đối Chứng Hiệu Năng Test Set & Đánh Giá Từng Lớp</h3>
+          <span class="chart-filename">outputs/reports/test_comparison_and_per_class.png</span>
+        </div>
+        <p class="chart-caption">
+          Đồ thị bên trái đối chứng trực quan: Untrained Baseline (44.00% trên Val Set) vs Majority Baseline (52.00% trên Test Set) vs Fine-tuned DistilBERT (74.50% kèm cột sai số Wilson 95% [68.04%, 80.04%]). Đồ thị bên phải phân tích chi tiết các chỉ số Precision, Recall, F1 cho từng lớp nhãn NEGATIVE và POSITIVE.
+        </p>
+        <div class="chart-image-wrap" onclick="openModal('../outputs/reports/test_comparison_and_per_class.png')">
+          <img src="../outputs/reports/test_comparison_and_per_class.png" alt="Test Comparison" loading="lazy">
+          <div class="zoom-badge">🔍 Nhấp chuột để phóng to toàn màn hình</div>
+        </div>
+      </div>
+
+      <!-- Biểu đồ 3 -->
+      <div class="vertical-chart-block">
+        <div class="chart-header-row">
+          <span class="chart-index">BIỂU ĐỒ 4.3</span>
+          <h3 class="chart-title">Ma Trận Nhầm Lẫn Trên Tập Kiểm Thử (Confusion Matrix)</h3>
+          <span class="chart-filename">outputs/reports/confusion_matrix.png</span>
+        </div>
+        <p class="chart-caption">
+          Phân bố dự đoán trên 200 mẫu test: <strong>True Negative (TN = 84, 42.0%)</strong>, <strong>False Positive (FP = 20, 10.0%)</strong>, <strong>False Negative (FN = 31, 15.5%)</strong>, <strong>True Positive (TP = 65, 32.5%)</strong>. Tổng số mẫu dự đoán chuẩn xác đạt 149/200 mẫu (74.50%). Tỷ lệ FN > FP cho thấy mô hình nhận diện review tiêu cực nhạy bén hơn.
+        </p>
+        <div class="chart-image-wrap" onclick="openModal('../outputs/reports/confusion_matrix.png')">
+          <img src="../outputs/reports/confusion_matrix.png" alt="Confusion Matrix" loading="lazy">
+          <div class="zoom-badge">🔍 Nhấp chuột để phóng to toàn màn hình</div>
+        </div>
+      </div>
+
+      <!-- Biểu đồ 4 -->
+      <div class="vertical-chart-block">
+        <div class="chart-header-row">
+          <span class="chart-index">BIỂU ĐỒ 4.4</span>
+          <h3 class="chart-title">Khám Phá Dữ Liệu & Phân Bố Độ Dài Token (EDA & Truncation)</h3>
+          <span class="chart-filename">outputs/reports/eda_distribution.png</span>
+        </div>
+        <p class="chart-caption">
+          Đồ thị bên trái xác nhận tập Train cân bằng lý tưởng (408 mẫu NEGATIVE ~ 51.0% và 392 mẫu POSITIVE ~ 49.0%). Đồ thị bên phải phân tích histogram độ dài từ vựng với các ngưỡng cắt cụt: ngưỡng cấu hình 128 tokens (87.5% bị cắt), 256 tokens (43.2% bị cắt) và 512 tokens (13.5% bị cắt). Phân tích thống kê cho thấy không có sự chênh lệch có ý nghĩa thống kê về tỷ lệ lỗi giữa nhóm bị cắt và không bị cắt trong mẫu thử nghiệm này.
+        </p>
+        <div class="chart-image-wrap" onclick="openModal('../outputs/reports/eda_distribution.png')">
+          <img src="../outputs/reports/eda_distribution.png" alt="EDA Distribution" loading="lazy">
+          <div class="zoom-badge">🔍 Nhấp chuột để phóng to toàn màn hình</div>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- MỤC 5: QUY TRÌNH 7 BƯỚC TINH CHỈNH -->
+    <article id="muc-5" class="doc-section">
+      <div class="section-marker">MỤC 05</div>
+      <h2 class="doc-heading">5. Quy Trình 7 Bước Tinh Chỉnh Mô Hình Chuẩn Mực</h2>
+      <div class="doc-divider"></div>
+
+      <p class="paragraph">
+        Toàn bộ mã nguồn huấn luyện tại <code>src/02_train_finetune.py</code> được cấu trúc tuần tự qua 7 bước chuẩn khoa học:
+      </p>
+
+      <div class="vertical-steps-timeline">
+        <div class="timeline-item">
+          <div class="timeline-num">Bước 01</div>
+          <div class="timeline-content">
+            <h4>Cài Đặt & Nạp Thư Viện Cốt Lõi</h4>
+            <p>Nạp <code>transformers</code>, <code>datasets</code>, <code>evaluate</code> và <code>torch</code>. Cấu hình bảng mã UTF-8 chống lỗi hiển thị tiếng Việt trên Windows.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-num">Bước 02</div>
+          <div class="timeline-content">
+            <h4>Tải & Phân Chia Tập Dữ Liệu IMDb</h4>
+            <p>Trích xuất 800 mẫu Train, 200 mẫu Validation (tách với <code>seed=42</code>) và 200 mẫu Test độc lập hoàn toàn để triệt tiêu nguy cơ rò rỉ dữ liệu (Data Leakage).</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-num">Bước 03</div>
+          <div class="timeline-content">
+            <h4>Khởi Tạo Kiến Trúc Mô Hình & Tokenizer</h4>
+            <p>Nạp <code>distilbert-base-uncased</code>. Khởi tạo Classification Head nhị phân ngẫu nhiên (Pre-classifier 768-d ➔ Dropout 0.2 ➔ Linear 2-d) và cấu hình ánh xạ <code>id2label</code>.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-num">Bước 04</div>
+          <div class="timeline-content">
+            <h4>Mã Hóa Token & Đệm Động (Dynamic Padding)</h4>
+            <p>Sử dụng <code>DataCollatorWithPadding</code> để thực hiện đệm động theo từng batch thay vì đệm tĩnh 128 tokens cố định toàn bộ tập dữ liệu, giảm thiểu các phép nhân ma trận thừa với token <code>[PAD]</code>.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-num">Bước 05</div>
+          <div class="timeline-content">
+            <h4>Cấu Hình Siêu Tham Số Huấn Luyện (TrainingArguments)</h4>
+            <p>Thiết lập bộ tối ưu AdamW (weight decay 0.01), learning rate $2\times 10^{-5}$, batch size 16, 2 epochs, chiến lược đánh giá theo từng epoch và khóa Best Model Checkpoint.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-num">Bước 06</div>
+          <div class="timeline-content">
+            <h4>Đánh Giá Baseline & Tiến Hành Huấn Luyện</h4>
+            <p>Đo đạc mốc Untrained Baseline trên Validation (44.0%), kích hoạt vòng lặp <code>trainer.train()</code> và lưu checkpoint an toàn định dạng <code>model.safetensors</code>.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item highlight">
+          <div class="timeline-num">Bước 07</div>
+          <div class="timeline-content">
+            <h4>Đánh Giá Toàn Diện & Xuất Bản Báo Cáo</h4>
+            <p>Đo đạc trên Test Set độc lập (Accuracy 74.50%, F1 74.27%, Wilson 95% CI), sinh ma trận nhầm lẫn, phân tích 51 ca sai số và ghi nhận toàn vẹn ra các tệp CSV, JSON, PNG.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- MỤC 6: PHÂN TÍCH CA SAI SỐ THỰC TẾ -->
+    <article id="muc-6" class="doc-section">
+      <div class="section-marker">MỤC 06</div>
+      <h2 id="dyn-error-count-header" class="doc-heading">6. Nghiên Cứu Điển Hình 51 Ca Sai Số (Error Analysis)</h2>
+      <div class="doc-divider"></div>
+
+      <p class="paragraph">
+        Phân tích chuyên sâu 51 trường hợp mô hình dự đoán sai trên tập test từ <code>outputs/reports/error_analysis.csv</code> chỉ ra 3 nhóm nguyên nhân ngữ nghĩa phức tạp:
+      </p>
+
+      <div class="vertical-cases-list">
+        
+        <!-- Case 1 -->
+        <div class="case-card">
+          <div class="case-header">
+            <span class="case-badge">TRƯỜNG HỢP #180 (ĐỘ TỰ TIN SAI: 80.23%)</span>
+            <span class="badge-tag tag-pos">Nhãn Thật: POSITIVE</span>
+            <span class="badge-tag tag-neg">Mô Hình Đoán: NEGATIVE</span>
+          </div>
+          <div class="case-category">⚠️ Nhóm lỗi: Cảm xúc hỗn hợp & Từ vựng đen tối (Mixed Sentiment)</div>
+          <blockquote class="case-quote">
+            "not really sure what to make of this movie. very weird, very artsy. not the kind of movie you watch because it has a compelling plot... too disturbing for her. runs a bit long, but nonetheless a worthwhile viewing for those interested in very dark movies."
+          </blockquote>
+          <div class="case-explanation">
+            💡 <strong>Phân tích nguyên nhân gốc rễ:</strong> Đoạn review chứa dày đặc các từ ngữ mang nghĩa tiêu cực trong từ điển ("weird", "disturbing", "runs a bit long", "dark movies") nhưng câu chốt cuối cùng lại khẳng định giá trị bộ phim ("nonetheless a worthwhile viewing"). Cơ chế Self-Attention bị áp đảo bởi các token mang sắc thái tối, dẫn đến dự đoán nhầm.
+          </div>
+        </div>
+
+        <!-- Case 2 -->
+        <div class="case-card">
+          <div class="case-header">
+            <span class="case-badge">TRƯỜNG HỢP #70 (ĐỘ TỰ TIN SAI: 72.98%)</span>
+            <span class="badge-tag tag-neg">Nhãn Thật: NEGATIVE</span>
+            <span class="badge-tag tag-pos">Mô Hình Đoán: POSITIVE</span>
+          </div>
+          <div class="case-category">⚠️ Nhóm lỗi: Hoài niệm quá khứ & Giọng văn mỉa mai (Contextual Confounding & Sarcasm)</div>
+          <blockquote class="case-quote">
+            "I used to always love the bill because of its great script and characters, but lately i feel as though it has turned into an emotional soap... ruined by the people who took over... Recommended to watch for a good laugh over the stupidity of the police officers involved - 2/10"
+          </blockquote>
+          <div class="case-explanation">
+            💡 <strong>Phân tích nguyên nhân gốc rễ:</strong> Tác giả mở đầu bằng lời khen ngợi bộ phim trong quá khứ ("always love", "great script", "amazing Police drama"), sau đó mỉa mai và chốt điểm số 2/10 ở cuối bài. Mô hình chú ý nhiều vào cụm từ khen ngợi ở phần mở đầu và câu "Recommended" nên đoán nhầm thành POSITIVE.
+          </div>
+        </div>
+
+      </div>
+    </article>
+
+    <!-- MỤC 7: KIỂM TOÁN TỆP TIN -->
+    <article id="muc-7" class="doc-section">
+      <div class="section-marker">MỤC 07</div>
+      <h2 class="doc-heading">7. Tổng Hợp Kiểm Toán Toàn Vẹn Hệ Thống Tệp Tin (43 Files)</h2>
+      <div class="doc-divider"></div>
+
+      <p class="paragraph">
+        Toàn bộ 43 tệp tin cấu thành dự án đã được đối soát mã băm SHA-256 độc lập và ghi nhận tại <code>docs/AUDIT_LOG.md</code>:
+      </p>
+
+      <div class="vertical-audit-summary">
+        <div class="audit-row">
+          <span class="audit-name">📁 Thư mục gốc (Root Level)</span>
+          <span class="audit-num">3 tệp</span>
+          <span class="audit-desc">README.md, requirements.txt, .gitignore</span>
+        </div>
+        <div class="audit-row">
+          <span class="audit-name">📁 Tài liệu học thuật (docs/)</span>
+          <span class="audit-num">14 tệp</span>
+          <span class="audit-desc">REPORT.md, AUDIT_LOG.md, RULES.md, data.md, model.md, training.md, evaluation.md...</span>
+        </div>
+        <div class="audit-row">
+          <span class="audit-name">📁 Mã nguồn triển khai (src/)</span>
+          <span class="audit-num">6 tệp</span>
+          <span class="audit-desc">01_sentiment_analysis.py, 02_train_finetune.py, 03_predict_finetuned.py, build_final_notebook.py...</span>
+        </div>
+        <div class="audit-row">
+          <span class="audit-name">📁 Sổ tay thực nghiệm (notebooks/)</span>
+          <span class="audit-num">1 tệp</span>
+          <span class="audit-desc">Practice3_HuggingFace_Final.ipynb (536 KB — Đầy đủ outputs thực tế)</span>
+        </div>
+        <div class="audit-row">
+          <span class="audit-name">📁 Trọng số mô hình (outputs/final_model/)</span>
+          <span class="audit-num">7 tệp</span>
+          <span class="audit-desc">model.safetensors (261.5 MB), config.json, tokenizer.json, vocab.txt...</span>
+        </div>
+        <div class="audit-row">
+          <span class="audit-name">📁 Báo cáo thực nghiệm (outputs/reports/)</span>
+          <span class="audit-num">9 tệp</span>
+          <span class="audit-desc">4 biểu đồ PNG, final_metrics.json, predictions.csv (200 mẫu), error_analysis.csv...</span>
+        </div>
+        <div class="audit-row">
+          <span class="audit-name">📁 Giao diện Dashboard (VISUAL/)</span>
+          <span class="audit-num">3 tệp</span>
+          <span class="audit-desc">index.html, index.css, app.js</span>
+        </div>
+        <div class="audit-row total">
+          <span class="audit-name">🛡️ Tổng quy mô kiểm định</span>
+          <span class="audit-num">43 tệp</span>
+          <span class="audit-desc">Dung lượng ~257.6 MB — Xác thực toàn vẹn 100% qua thuật toán SHA-256</span>
+        </div>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- Lightbox Modal for Image Zoom -->
+  <div id="img-modal" class="modal-overlay" onclick="closeModal()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <button class="modal-close-btn" onclick="closeModal()">✕</button>
+      <img id="modal-target" class="modal-img" src="" alt="Phóng to biểu đồ">
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
